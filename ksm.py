@@ -10,6 +10,9 @@ from elasticsearch import Elasticsearch
 from paramiko import AutoAddPolicy, SSHClient
 
 
+__version__ = '0.1'
+
+
 @decorator
 def opens(method, self, *args, **kwargs):
     self.open()

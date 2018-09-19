@@ -29,7 +29,7 @@ optional arguments:
 Doing some adding/removing/listing.
 
 ```
-$ python ksm.py add something=else else=something --es-host https://es-stage-api.example.com
+$ es-ksm add something=else else=something --es-host https://es-stage-api.example.com
 Password: 
 es-stage_client10 something=else ✔
 es-stage_client07 something=else ✔
@@ -61,7 +61,7 @@ es-stage_master03 else=something ✔
 es-stage_master05 else=something ✔
 es-stage_master02 else=something ✔
 es-stage_master04 else=something ✔
-$ python ksm.py remove something else --es-host https://es-stage-api.example.com
+$ es-ksm remove something else --es-host https://es-stage-api.example.com
 Password: 
 es-stage_data04   ✔
 es-stage_client10 ✔
@@ -78,7 +78,7 @@ es-stage_master02 ✔
 es-stage_master03 ✔
 es-stage_master05 ✔
 es-stage_master04 ✔
-$ python ksm.py list --es-host https://es-stage-api.example.com                 
+$ es-ksm list --es-host https://es-stage-api.example.com                 
 Password: 
 es-stage_client07:
  - keystore.seed

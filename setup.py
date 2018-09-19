@@ -1,5 +1,5 @@
 from setuptools import find_packages, setup
-from view import __version__ as pov_version
+from ksm import __version__ as ksm_version
 import sys
 
 if sys.version_info < (3, 7):
@@ -9,7 +9,7 @@ setup(
     name='es-ksm',
     author='Casey Weed',
     author_email='cweed@caseyweed.com',
-    version=pov_version,
+    version=ksm_version,
     description='Manage keystores for es clusters',
     url='https://github.com/battleroid/es-ksm',
     py_modules=['ksm'],
