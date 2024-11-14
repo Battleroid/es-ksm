@@ -14,8 +14,7 @@ setup(
     url='https://github.com/battleroid/es-ksm',
     py_modules=['ksm'],
     install_requires=[
-        'elasticsearch',
-        'paramiko'
+        'elasticsearch'
     ],
     entry_points="""
         [console_scripts]
