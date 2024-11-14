@@ -2,26 +2,29 @@
 
 Keystore manager of sorts for Elasticsearch (given that you're using bare metal hosts for your nodes and using the puppet module with CentOS, otherwise you'll have to make minor modifications). Give it a cluster API, the verb and other required params and it'll reach out to the keystore(s) where applicable.
 
-Used with CentOS 7.x with nodes setup on bare metal hosts using forge module for Elasticsearch, tested against 5/6.x (up to 6.4.x) clusters. You may need to make modifications if using it outside this configuration.
+Used with CentOS 7.x with nodes setup on bare metal hosts using forge module for Elasticsearch, tested against 5/6.x (up to 7.17.x) clusters. You may need to make modifications if using it outside this configuration. Meant to be ran from your host computer to make changes to keystores for an entire cluster (e.g. adding s3 repository info).
 
 ## Usage
 
 ```
-usage: ksm.py [-h] [--input-file [INPUT_FILE]] --es-host ES_HOST
-              [--es-user ES_USER] [--es-pass ES_PASS]
-              {add,add-file,remove,list,create} [key_value [key_value ...]]
+usage: ksm.py [-h] [-d] [--input-file [INPUT_FILE]] --es-host ES_HOST
+              [-u ES_USER] [-p ES_PASS]
+              {add,add-file,remove,diff,list,create} [key_value ...]
 
 positional arguments:
-  {add,add-file,remove,list,create}
+  {add,add-file,remove,diff,list,create}
   key_value             key (and value if applicable in the form of key=value)
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
+  -d, --debug           enable debug logging
   --input-file [INPUT_FILE]
                         file for add-file verb
   --es-host ES_HOST     es api
-  --es-user ES_USER     es user
-  --es-pass ES_PASS     es pass
+  -u ES_USER, --es-user ES_USER
+                        es user
+  -p ES_PASS, --es-pass ES_PASS
+                        es pass
 ```
 
 ## Examples
